@@ -66,7 +66,7 @@ public class APITest {
      * @return
      */
     public static String encryToMD5(String str){
-        return  DigestUtils.md2Hex(str);
+        return  DigestUtils.md5Hex(str);
     }
 
     /**
