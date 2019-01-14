@@ -1,13 +1,116 @@
 ##### 一、概述
-本文是宜昌雪亮工程视频监控系统第三方接口说明文档，请按照文档说明进行接口开发，也可下载相对应语言的示例代码demo进行查看。有任何问题请加QQ535647748 
+本文是宜昌雪亮工程视频监控系统第三方接口说明文档，请按照文档说明进行接口开发，也可下载相对应语言的示例代码demo进行查看。
 ##### 二、接口说明
 1. 申请
     首先向宜昌三峡云申请第三方接口账号和相对应的设备权限，获取到每个该账号对应的**APP_KEY**和**APP_SECRET**。接口中的参数将以APP_SECRET进行加密，请妥善保存该参数！若平台发现恶意接口访问，会将该第三方APP_KET进行封禁。
 2. 接口文档 
     
-    **1、获取实时视频流**
+    **1、获取设备列表**
+        -  ***请求URL***
+        > http://10.19.196.65:80/sso/api/v1//trees/client
+        - **请求方式** 
+        >**GET**
+        -  **请求参数**
+    
+        | 参数名称 | 参数类型 | 参数说明 |
+        | ------ | ------ | ------ |
+        | appkey| string | 申请的appkey |
+        | timestamp| long | 时间戳。表示1970年01月01日00时00分00秒起至现在的总秒数。单位 : 秒 |
+        | token| string | 使用APP_SECRET签名算法加密后的字符串(见下方的签名算法) |
+        - **返回**
+        **当code=1时请求设备成功，其他均为失败。**
+        
+      ```
+          {
+          	"code": 1,
+          	"msg": "成功",
+          	"data": {
+          		"devices": [{
+          			"id": 2113,
+          			"deviceName": "龙潭河村广场",
+          			"ip": null,
+          			"parentId": 383,
+          			"cloudControl": null,
+          			"type": 1,
+          			"netType": 1,
+          			"onlineStatus": 1,
+          			"recStatus": null,
+          			"saveType": 1
+          		}, {
+          			"id": 2112,
+          			"deviceName": "龙潭河村服务大厅",
+          			"ip": null,
+          			"parentId": 383,
+          			"cloudControl": null,
+          			"type": 1,
+          			"netType": 1,
+          			"onlineStatus": 1,
+          			"recStatus": null,
+          			"saveType": 1
+          		}],
+          		"devicegroups": [{
+          			"id": 1,
+          			"groupName": "宜都市",
+          			"parentId": 0,
+          			"orderNumber": 1,
+          			"platformId": null,
+          			"deviceId": null,
+          			"type": 0,
+          			"gbid": "42055100002000200001",
+          			"outgbid": "42055100002000200001",
+          			"children": null
+          		}, {
+          			"id": 2,
+          			"groupName": "宜都市三峡云平台",
+          			"parentId": 1,
+          			"orderNumber": 1,
+          			"platformId": null,
+          			"deviceId": null,
+          			"type": 0,
+          			"gbid": "42055100002150000002",
+          			"outgbid": "42055100002150000002",
+          			"children": null
+          		}, {
+          			"id": 3,
+          			"groupName": "一类视频监控",
+          			"parentId": 2,
+          			"orderNumber": 1,
+          			"platformId": null,
+          			"deviceId": null,
+          			"type": 0,
+          			"gbid": "42055100002150000003",
+          			"outgbid": "42055100002160000003",
+          			"children": null
+          		}, {
+          			"id": 4,
+          			"groupName": "00雪亮工程",
+          			"parentId": 3,
+          			"orderNumber": 1,
+          			"platformId": null,
+          			"deviceId": null,
+          			"type": 0,
+          			"gbid": "42055100002150000004",
+          			"outgbid": "42055100002160000004",
+          			"children": null
+          		}, {
+          			"id": 383,
+          			"groupName": "16wjf龙潭河村",
+          			"parentId": 4,
+          			"orderNumber": 17,
+          			"platformId": null,
+          			"deviceId": 10000000909,
+          			"type": 1,
+          			"gbid": "42055100002150000383",
+          			"outgbid": "42055100002160000383",
+          			"children": null
+          		}]
+          	}
+          }
+      ```
+    
+    **2、获取实时视频流**
     -  ***请求URL***
-    > http://127.0.0.1:80/sso/api/v1/real/urls
+    > http://10.19.196.65:80/sso/api/v1/real/urls
     - **请求方式** 
     >**GET**
     -  **请求参数**
@@ -24,7 +127,7 @@
     
   ```
       {
-       "data": "rtmp://127.0.0.1:1554/liveonly/copy_100000025?token=GADFDFA",
+       "data": "rtmp://10.19.196.65:1554/liveonly/copy_100000025?token=GADFDFA",
        "code": 1,
        "msg": "操作正确"
       }
@@ -65,4 +168,4 @@ centertype:1
 ```
 * 第三步 : 加上token、app_key和timestamp 。请求http
 
- > http://127.0.0.1:80/sso/api/v1/real/urls?id=10000000789&centertype=0&timestamp=1547088082&appkey=APPKEY&token=cbb12e7a8f2360f003229607487946a9
+ > http://10.19.196.65:80/sso/api/v1/real/urls?id=10000000789&centertype=0&timestamp=1547088082&appkey=APPKEY&token=cbb12e7a8f2360f003229607487946a9
