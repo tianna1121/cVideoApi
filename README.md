@@ -7,7 +7,7 @@
     
     **1、获取设备列表**
     -  ***请求URL***
-    > http://10.19.196.65:80/sso/api/v1/real/urls
+    > http://127.0.0.1:80/sso/api/v1/trees/client
     - **请求方式** 
     >**GET**
     -  **请求参数**
@@ -110,7 +110,7 @@
     
     **2、获取实时视频流**
     -  ***请求URL***
-    > http://10.19.196.65:80/sso/api/v1/real/urls
+    > http://127.0.0.1:80/sso/api/v1/real/urls
     - **请求方式** 
     >**GET**
     -  **请求参数**
@@ -168,4 +168,4 @@ centertype:1
 ```
 * 第三步 : 加上token、app_key和timestamp 。请求http
 
- > http://10.19.196.65:80/sso/api/v1/real/urls?id=10000000789&centertype=0&timestamp=1547088082&appkey=APPKEY&token=cbb12e7a8f2360f003229607487946a9
+ > http://127.0.0.1:80/sso/api/v1/real/urls?id=10000000789&centertype=0&timestamp=1547088082&appkey=APPKEY&token=cbb12e7a8f2360f003229607487946a9
