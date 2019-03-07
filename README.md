@@ -118,7 +118,7 @@
     | 参数名称 | 参数类型 | 参数说明 |
     | ------ | ------ | ------ |
     |id | long | 设备的ID |
-    | centertype | int| 网路类型(视频专网=0 政务外网=1 互联网=4)  |
+    | centertype | int| 网路类型(视频专网=0 政务外网=1 互联网=2)  |
     | appkey| string | 申请的appkey |
     | timestamp| long | 时间戳。表示1970年01月01日00时00分00秒起至现在的总秒数。单位 : 秒 |
     | token| string | 使用APP_SECRET签名算法加密后的字符串(见下方的签名算法) |
