@@ -141,6 +141,7 @@
 
 **特别注意以下重要规则：**
  * 参数名以字母先后顺序排序；
+ * 若接口无参数，则不需要拼接，直接进行第二步 ;
  * appkey、timestamp和token不参与该字符串的拼接；
  * 参数名区分大小写；
  
@@ -163,8 +164,8 @@ centertype:1
 ```
   stringSignTemp=UYHGBVZDAD+stringA
   即 stringSignTemp=UYHGBVZDADcentertype1id100000025
-  sign=  MD5(stringSignTemp)
-  即sign= MD5(UYHGBVZDADcentertype1id100000025)
+  token=  MD5(stringSignTemp)
+  即token= MD5(UYHGBVZDADcentertype1id100000025)
 ```
 * 第三步 : 加上token、app_key和timestamp 。请求http
 
