@@ -19,6 +19,9 @@
         | token| string | 使用APP_SECRET签名算法加密后的字符串(见下方的签名算法) |
         - **返回**
         **当code=1时请求设备成功，其他均为失败。**
+        onlineStatus : 0 表示不在线  1 表示在线
+        longitude : 经度
+        latitude  : 纬度
         
       ```
           {
@@ -35,6 +38,8 @@
           			"netType": 1,
           			"onlineStatus": 1,
           			"recStatus": null,
+                                "longitude" : 111.213797,
+                                "latitude" :30.490161,
           			"saveType": 1
           		}, {
           			"id": 2112,
@@ -46,6 +51,8 @@
           			"netType": 1,
           			"onlineStatus": 1,
           			"recStatus": null,
+                                "longitude" : 111.213797,
+                                "latitude" :30.490161,
           			"saveType": 1
           		}],
           		"devicegroups": [{
