@@ -144,31 +144,28 @@
       }
   ```
 
-    **3、获取实时视频流(根据流类型返回对应码流)**
-    -  ***请求URL***
-    > http://127.0.0.1:80/sso/api/v1/real/url/id
-    - **请求方式** 
-    >**GET**
-    -  **请求参数**
+    
 
-    | 参数名称 | 参数类型 | 参数说明 |
-    | ------ | ------ | ------ |
-    |id | long | 设备的ID |
-    | centertype | int| 网路类型(视频专网=0 政务外网=1 互联网=2)  |
-    | rtptype| string| 视频流类型(rtsp=0 rtmp=1 hls=2)  |
-    | appkey| string | 申请的appkey |
-    | timestamp| long | 时间戳。表示1970年01月01日00时00分00秒起至现在的总秒数。单位 : 秒 |
-    | token| string | 使用APP_SECRET签名算法加密后的字符串(见下方的签名算法) |
+### 3、获取实时视频流(根据流类型返回对应码流)
+
+    
+    http://127.0.0.1:80/sso/api/v1/real/url/id
+    请求方式
+    GET
+    请求参数
+| 参数名称   | 参数类型 | 参数说明 |
+| ---------- | -------- | -------- |
+| id         | long     | 设备ID   |
+| centertype | int      | 网路类型(视频专网=0 政务外网=1 互联网=2)      |
+| rtptype    | string   | 视频流类型(rtsp=0 rtmp=1 hls=2)        |
+| appkey     | string   | 申请的appkey       |
+| timestamp  | long     | 时间戳。表示1970年01月01日00时00分00秒起至现在的总秒数。单位 : 秒       |
+| token      | string   | 使用APP_SECRET签名算法加密后的字符串(见下方的签名算法)        |
+
     - **返回**
     **当code=1时请求设备成功，其他均为失败。**
     
-  ```
-      {
-       "data": "rtmp://10.19.196.65:1554/liveonly/copy_100000025?token=GADFDFA",
-       "code": 1,
-       "msg": "操作正确"
-      }
-  ```
+
 
 
 #####三、 签名算法
