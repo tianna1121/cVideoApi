@@ -30,8 +30,11 @@ public class APITest {
         // 进行加密后的token。加密方法见apimd5()方法注释
         String token = apimd5();
         // 最终的 url
+        // 取视频流url
         String url = "http://127.0.0.1:80/sso/api/v1/real/urls?id=10000000789&" +
                 "centertype=0&timestamp=#{timestamp}&appkey=#{appkey}&token=#{token}";
+        // 获取设备url
+        String url = "http://127.0.0.1:80/sso/api/v1/trees/client?timestamp=#{timestamp}&appkey=#{appkey}&token=#{token}";
     }
 
 
