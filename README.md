@@ -140,7 +140,7 @@
     **当code=1时请求设备成功，其他均为失败。**
       ```
       {
-       "data": "rtmp://10.19.196.65:1554/liveonly/copy_100000025?token=GADFDFA",
+       "data": "rtmp://127.0.0.1:1554/liveonly/copy_100000025?token=GADFDFA",
        "code": 1,
        "msg": "操作正确"
       }
@@ -168,7 +168,7 @@
     **当code=1时请求设备成功，其他均为失败。**
       ```
       {
-       "data": "rtmp://10.19.196.65:1554/liveonly/copy_100000025?token=GADFDFA",
+       "data": "rtmp://127.0.0.1:1554/liveonly/copy_100000025?token=GADFDFA",
        "code": 1,
        "msg": "操作正确"
       }
